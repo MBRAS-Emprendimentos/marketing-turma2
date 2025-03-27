@@ -61,8 +61,11 @@ export default function Home() {
                   Marketing é a <strong className="font-medium text-blue-700">confluência entre arte e ciência</strong> que, através do equilíbrio constante entre <strong className="font-medium text-blue-700">dados, estratégia, comunicação e execução</strong>, cultiva <strong className="font-medium text-blue-700">conexões e experiências</strong> entre pessoas e marcas, gerando <strong className="font-medium text-blue-700">valor mútuo</strong>.
                 </p>
                 <div className="mt-4 text-sm text-slate-500 italic text-right pr-4">
-  Ronaldo Martins - MBRAS
-</div>
+                  Ronaldo Martins - MBRAS
+                  <a href="https://t.co/clqgcaiSqv" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-600 hover:text-blue-800 hover:underline">
+                    Fonte
+                  </a>
+                </div>
               </blockquote>
 
             </div>
