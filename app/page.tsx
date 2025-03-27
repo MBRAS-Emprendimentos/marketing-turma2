@@ -54,13 +54,17 @@ export default function Home() {
             {/* Definição de Marketing */}
             <div className="mb-16 max-w-4xl mx-auto">
               <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-tight">
-                Apresentação da Nova Definição de Marketing
+                Apresentação da Definição de Marketing 2025
               </h2>
               <blockquote className="border-l-4 border-blue-600 pl-8 py-6 bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg shadow-md">
                 <p className="text-xl italic text-slate-700 leading-relaxed font-light">
                   Marketing é a <strong className="font-medium text-blue-700">confluência entre arte e ciência</strong> que, através do equilíbrio constante entre <strong className="font-medium text-blue-700">dados, estratégia, comunicação e execução</strong>, cultiva <strong className="font-medium text-blue-700">conexões e experiências</strong> entre pessoas e marcas, gerando <strong className="font-medium text-blue-700">valor mútuo</strong>.
                 </p>
+                <div className="mt-4 text-sm text-slate-500 italic text-right pr-4">
+  Ronaldo Martins - MBRAS
+</div>
               </blockquote>
+
             </div>
 
             {/* Ferramentas de IA - Enhanced with better visual design */}

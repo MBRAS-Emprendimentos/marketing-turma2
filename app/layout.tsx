@@ -39,8 +39,7 @@ export default function RootLayout({
               />
             </div>
             <nav className="hidden md:flex space-x-6 text-sm font-medium">
-              <a href="#" className="hover:text-blue-300 transition-colors duration-200">Institucional</a>
-              <a href="#" className="hover:text-blue-300 transition-colors duration-200">Contato</a>
+              <a href="#" className="hover:text-blue-300 transition-colors duration-200">Marketing - Turma 2</a>
             </nav>
             <div className="flex items-center space-x-4">
       
