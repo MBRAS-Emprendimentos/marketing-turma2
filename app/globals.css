@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -22,5 +22,29 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+/* Remove the old directives since we're using the import now */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Custom variables and styles */
+:root {
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+html {
+  font-family: var(--font-montserrat);
+}
+
+/* Add custom styles for thin font weight */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-thin {
+  font-weight: 100;
 }
