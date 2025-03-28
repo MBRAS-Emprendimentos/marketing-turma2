@@ -31,8 +31,8 @@ export default function Home() {
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {aiTools.map((tool, index) => (
-                <div key={index} className="bg-card hover:bg-card/90 border border-border rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col">
+              {aiTools.map((tool) => (
+                <div key={tool.name} className="bg-card hover:bg-card/90 border border-border rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col">
                   <h3 className="text-xl font-medium text-foreground mb-2">{tool.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4 flex-grow">Modelo: {tool.model}</p>
                   <a 
@@ -93,7 +93,7 @@ export default function Home() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border bg-card"> 
-                    {aiTools.map((tool, index) => (
+                    {aiTools.map((tool) => (
                       <tr key={tool.name} className="hover:bg-muted/50 transition-colors">
                         <td className="px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-sm text-muted-foreground">
                           <a 

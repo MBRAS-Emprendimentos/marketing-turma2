@@ -67,7 +67,7 @@ export default function Aula1() {
               <span className="font-semibold text-lg">1</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-medium text-foreground">
-              Conectando-se ao "Porquê" do Corretor
+              Conectando-se ao &quot;Porquê&quot; do Corretor
             </h2>
           </div>
 
@@ -78,11 +78,11 @@ export default function Aula1() {
             <ul className="space-y-4 mb-6">
               <li className="bg-muted/50 p-4 rounded-lg text-foreground/90 flex items-start border border-border/30">
                 <HelpCircle className="h-5 w-5 mr-3 mt-1 text-primary/80 flex-shrink-0" />
-                <span>"Quem aqui já sentiu que fez tudo certo, mas o cliente ainda assim não fechou negócio?"</span>
+                <span>&quot;Quem aqui já sentiu que fez tudo certo, mas o cliente ainda assim não fechou negócio?&quot;</span>
               </li>
               <li className="bg-muted/50 p-4 rounded-lg text-foreground/90 flex items-start border border-border/30">
                 <HelpCircle className="h-5 w-5 mr-3 mt-1 text-primary/80 flex-shrink-0" />
-                <span>"Por que um cliente escolhe você e a MBRAS, em vez de outro corretor ou imobiliária?"</span>
+                <span>&quot;Por que um cliente escolhe você e a MBRAS, em vez de outro corretor ou imobiliária?&quot;</span>
               </li>
             </ul>
             <div className="bg-primary/5 p-4 rounded-lg border-l-4 border-primary">
