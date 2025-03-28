@@ -43,6 +43,9 @@ export default function Home() {
                 <a href="#ferramentas" className="px-8 py-3 bg-transparent hover:bg-white/10 border border-white/30 text-white rounded-md transition-colors duration-300 text-center font-light tracking-wide">
                   Ver Ferramentas de AI
                 </a>
+                <a href="/aula1" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300 text-center font-light tracking-wide">
+                  Acessar Aula 1
+                </a>
               </div>
             </div>
           </div>
