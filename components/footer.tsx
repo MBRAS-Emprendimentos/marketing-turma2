@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  ArrowUpRight,
 } from "lucide-react";
 import { FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
@@ -39,7 +40,7 @@ const navigation = {
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/mbras-solu%C3%A7%C3%B5es-imobili%C3%A1rias",
+      href: "https://www.linkedin.com/company/mbras-soluções-imobiliárias",
       icon: LinkedinIcon,
     },
   ],
@@ -50,10 +51,12 @@ export default function Footer() {
   if (pathname.includes("presentation")) return null;
 
   return (
-    <footer className="relative overflow-hidden bg-slate-950 border-t border-gray-800">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.05),transparent_70%)]" />
-      <div className="relative container mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <footer className="relative overflow-hidden bg-slate-950 border-t border-slate-800 pt-16 pb-8 text-slate-300">
+      {/* Background pattern */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.15),transparent_70%)] opacity-30" />
+      
+      <div className="relative container mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Column 1: Logo and Social Links */}
           <div className="flex flex-col items-center md:items-start">
             <Image
@@ -61,52 +64,53 @@ export default function Footer() {
               alt="Logo MBRAS"
               width={128}
               height={55}
-              className="w-36 mb-6"
+              className="w-36 mb-6 rounded-md"
             />
             <div className="flex gap-4 mt-4">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-gray-200 transition-colors"
+                  className="text-slate-400 hover:text-primary hover:scale-110 transition-all duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
                 >
-                  <item.icon className="h-5 w-5" />
+                  <item.icon className="size-5" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Column 2: Navigation Links */}
-          <div className="text-gray-400">
-            <h3 className="text-gray-200 font-semibold mb-4">Links Rápidos</h3>
+          <div className="text-slate-200">
+            <h3 className="text-lg font-medium mb-5 text-white">Links Rápidos</h3>
             <nav className="flex flex-col gap-3">
               {navigation.main.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm hover:text-gray-200 transition-colors"
+                  className="group text-slate-400 hover:text-primary transition-colors duration-300 flex items-center"
                 >
-                  {item.name}
+                  <span>{item.name}</span>
+                  <ArrowUpRight className="size-3.5 ml-1.5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                 </Link>
               ))}
             </nav>
           </div>
 
           {/* Column 3: Contact Information */}
-          <div className="text-gray-400">
-            <h3 className="text-gray-200 font-semibold mb-4">Contato</h3>
-            <div className="space-y-4">
+          <div className="text-slate-200">
+            <h3 className="text-lg font-medium mb-5 text-white">Contato</h3>
+            <div className="space-y-5">
               <a
                 href="https://maps.app.goo.gl/8FqHgfei2yJPbiKr7"
-                className="flex items-start gap-2 hover:text-gray-200 transition-colors"
+                className="group flex items-start gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
-                <span className="text-sm">
+                <MapPin className="size-5 flex-shrink-0 mt-0.5 text-primary/70 group-hover:text-primary transition-colors duration-300" />
+                <span className="text-sm group-hover:underline decoration-primary/30 underline-offset-4">
                   Av. Magalhães de Castro 4.800, Park Tower – 23° andar
                   Cidade Jardim - São Paulo - SP, 05676-120
                 </span>
@@ -114,35 +118,35 @@ export default function Footer() {
 
               <a
                 href="https://api.whatsapp.com/send?phone=5511977998888"
-                className="flex items-center gap-2 hover:text-gray-200 transition-colors"
+                className="group flex items-center gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaWhatsapp className="h-5 w-5 text-green-500" />
-                <span className="text-sm">+55 11 97799 8888</span>
+                <FaWhatsapp className="size-5 text-green-500 group-hover:text-green-400 transition-colors duration-300" />
+                <span className="text-sm group-hover:underline decoration-green-500/30 underline-offset-4">+55 11 97799 8888</span>
               </a>
 
               <a
                 href="tel:+551151856999"
-                className="flex items-center gap-2 hover:text-gray-200 transition-colors"
+                className="group flex items-center gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-300"
               >
-                <Phone className="h-5 w-5" />
-                <span className="text-sm">+55 11 5185 6999</span>
+                <Phone className="size-5 text-primary/70 group-hover:text-primary transition-colors duration-300" />
+                <span className="text-sm group-hover:underline decoration-primary/30 underline-offset-4">+55 11 5185 6999</span>
               </a>
 
               <a
                 href="mailto:mbras@mbras.com.br"
-                className="flex items-center gap-2 hover:text-gray-200 transition-colors"
+                className="group flex items-center gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-300"
               >
-                <Mail className="h-5 w-5" />
-                <span className="text-sm">mbras@mbras.com.br</span>
+                <Mail className="size-5 text-primary/70 group-hover:text-primary transition-colors duration-300" />
+                <span className="text-sm group-hover:underline decoration-primary/30 underline-offset-4">mbras@mbras.com.br</span>
               </a>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+        <div className="mt-16 pt-6 border-t border-slate-800/50 text-center text-xs text-slate-500">
           <p>&copy; {new Date().getFullYear()} MBRAS Imobiliária — CRECI-SP 23907-J</p>
         </div>
       </div>

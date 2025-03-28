@@ -1,4 +1,5 @@
 import React from 'react';
+import { HeroSection } from '@/components/hero-section';
 
 // Interface para definir a estrutura dos dados da ferramenta de IA
 interface AITool {
@@ -16,99 +17,105 @@ const aiTools: AITool[] = [
   { name: 'DeepSeek', link: 'platform.deepseek.com', model: 'DeepSeek-R1' },
 ];
 
-
 export default function Home() {
   return (
     <>
-      <div className="space-y-12">
-        {/* Hero Section - Enhanced with better typography and visual elements */}
-        <section className="relative h-[90vh] bg-slate-950 -mt-6 flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
-              alt="Luxury Real Estate" 
-              className="w-full h-full object-cover opacity-30 transition-transform duration-10000 transform scale-105 animate-slow-zoom"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-900/80 to-slate-950/90"></div>
-          </div>
-          <div className="container relative z-10 mx-auto px-6 md:px-8 text-white">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-7xl font-thin mb-8 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-200">
-                Fundamentos de Marketing Imobiliário
-              </h1>
-              <p className="text-lg md:text-xl max-w-2xl mb-12 text-blue-50 leading-relaxed font-light tracking-wide">
-                Aprenda como a confluência entre arte e ciência pode gerar valor real para seus clientes e transformar sua carreira no mercado imobiliário.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#ferramentas" className="px-8 py-3 bg-transparent hover:bg-white/10 border border-white/30 text-white rounded-md transition-colors duration-300 text-center font-light tracking-wide">
-                  Ver Ferramentas de AI
-                </a>
-                <a href="/aula1" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300 text-center font-light tracking-wide">
-                  Acessar Aula 1
-                </a>
-              </div>
+      <div className="space-y-8 sm:space-y-12">
+        <HeroSection />
+
+        {/* AI Tools Section - Display the AI tools in a responsive card layout */}
+        <section className="py-12 sm:py-16 bg-gradient-to-tr from-muted/30 to-background">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-8 sm:mb-10 text-center">
+              Ferramentas de IA <span className="text-primary">Recomendadas</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {aiTools.map((tool, index) => (
+                <div key={index} className="bg-card hover:bg-card/90 border border-border rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col">
+                  <h3 className="text-xl font-medium text-foreground mb-2">{tool.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 flex-grow">Modelo: {tool.model}</p>
+                  <a 
+                    href={`https://${tool.link}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-primary hover:text-primary/80 text-sm font-medium flex items-center mt-auto"
+                  >
+                    {tool.link}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Seção: Aula de Marketing Imobiliário - Enhanced with better spacing and visual hierarchy */}
-        <section id="marketing" className="py-20 bg-white rounded-t-3xl -mt-10 shadow-xl relative z-10">
-          <div className="container mx-auto px-6 md:px-8">
-            {/* Definição de Marketing */}
-            <div className="mb-16 max-w-4xl mx-auto">
-              <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-tight">
+        {/* Marketing Definition Section - Improved responsiveness */}
+        <section className="py-16 sm:py-20 md:py-24 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+            <div className="mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-3 sm:mb-6 tracking-tight">
                 Apresentação da Definição de Marketing 2025
               </h2>
-              <blockquote className="border-l-4 border-blue-600 pl-8 py-6 bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg shadow-md">
-                <p className="text-xl italic text-slate-700 leading-relaxed font-light">
-                  Marketing é a <strong className="font-medium text-blue-700">confluência entre arte e ciência</strong> que, através do equilíbrio constante entre <strong className="font-medium text-blue-700">dados, estratégia, comunicação e execução</strong>, cultiva <strong className="font-medium text-blue-700">conexões e experiências</strong> entre pessoas e marcas, gerando <strong className="font-medium text-blue-700">valor mútuo</strong>.
+              <blockquote className="border-l-2 sm:border-l-4 border-primary pl-3 sm:pl-6 md:pl-8 py-3 sm:py-5 md:py-6 bg-gradient-to-r from-muted/50 to-primary/10 rounded-lg shadow-md">
+                <p className="text-sm sm:text-base md:text-xl italic text-foreground leading-relaxed font-light">
+                  Marketing é a <strong className="font-medium text-primary">confluência entre arte e ciência</strong> que, através do equilíbrio constante entre <strong className="font-medium text-primary">dados, estratégia, comunicação e execução</strong>, cultiva <strong className="font-medium text-primary">conexões e experiências</strong> entre pessoas e marcas, gerando <strong className="font-medium text-primary">valor mútuo</strong>.
                 </p>
-                <div className="mt-4 text-sm text-slate-500 italic text-right pr-4">
+                <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-muted-foreground italic text-right pr-2 sm:pr-4">
                   Ronaldo Martins - MBRAS
-                  <a href="https://t.co/clqgcaiSqv" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-600 hover:text-blue-800 hover:underline">
+                  <a href="https://t.co/clqgcaiSqv" target="_blank" rel="noopener noreferrer" className="ml-2 text-primary hover:text-primary/80 hover:underline">
                     Fonte
                   </a>
                 </div>
               </blockquote>
-
             </div>
+          </div>
+        </section>
 
-            {/* Ferramentas de IA - Enhanced with better visual design */}
-            <div id="ferramentas" className="mt-20">
-              <h2 className="text-3xl font-light text-slate-800 mb-8 tracking-tight flex items-center">
-                <span className="bg-blue-600 w-1 h-8 rounded mr-4"></span>
+        {/* Tools Table - Improved responsiveness */}
+        <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-muted/50 to-primary/10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+            <div id="ferramentas" className="mt-8 sm:mt-12 md:mt-20">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-3 sm:mb-6 md:mb-8 tracking-tight flex items-center">
+                <span className="bg-primary size-5 sm:size-6 md:size-8 rounded mr-2 sm:mr-3 md:mr-4"></span>
                 Planilha de Ferramentas de IA
               </h2>
-              <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl">
-                <table className="min-w-full divide-y divide-slate-200">
-                  <thead className="bg-gradient-to-r from-slate-800 to-blue-900">
+              <div className="overflow-x-auto rounded-xl border border-border shadow-xl">
+                <table className="min-w-full divide-y divide-border"> 
+                  <thead className="bg-muted"> 
                     <tr>
-                      <th scope="col" className="px-8 py-5 text-left text-xs font-medium text-white uppercase tracking-wider">
-                        Ferramenta de IA
-                      </th>
-                      <th scope="col" className="px-8 py-5 text-left text-xs font-medium text-white uppercase tracking-wider">
-                        Link de Acesso
-                      </th>
-                      <th scope="col" className="px-8 py-5 text-left text-xs font-medium text-white uppercase tracking-wider">
-                        Modelo Mais Avançado
-                      </th>
+                      <th scope="col" className="px-4 py-3 sm:px-6 sm:py-4 text-left text-xs font-semibold text-foreground uppercase tracking-wider">Link de Acesso</th>
+                      <th scope="col" className="px-4 py-3 sm:px-6 sm:py-4 text-left text-xs font-semibold text-foreground uppercase tracking-wider">Ferramenta</th>
+                      <th scope="col" className="px-4 py-3 sm:px-6 sm:py-4 text-left text-xs font-semibold text-foreground uppercase tracking-wider hidden md:table-cell">Modelo Mais Avançado</th>
+                      <th scope="col" className="px-4 py-3 sm:px-6 sm:py-4 text-left text-xs font-semibold text-foreground uppercase tracking-wider hidden lg:table-cell">Empresa</th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-slate-200">
+                  <tbody className="divide-y divide-border bg-card"> 
                     {aiTools.map((tool, index) => (
-                      <tr key={tool.name} className={`hover:bg-blue-50 transition-colors duration-300 ${index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}`}>
-                        <td className="px-8 py-6 whitespace-nowrap text-base font-medium text-slate-900">
-                          {tool.name}
-                        </td>
-                        <td className="px-8 py-6 whitespace-nowrap text-base text-blue-600 hover:text-blue-800">
-                          <a href={`https://${tool.link}`} target="_blank" rel="noopener noreferrer" className="hover:underline transition-all">
+                      <tr key={tool.name} className="hover:bg-muted/50 transition-colors">
+                        <td className="px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-sm text-muted-foreground">
+                          <a 
+                            href={`https://${tool.link}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-primary hover:text-primary/80 hover:underline flex items-center"
+                          >
                             {tool.link}
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
                           </a>
                         </td>
-                        <td className="px-8 py-6 whitespace-nowrap text-base text-slate-700 font-mono">
-                          <span className="px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs">
-                            {tool.model}
-                          </span>
+                        <td className="px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-sm font-medium text-foreground">{tool.name}</td>
+                        <td className="px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-sm text-muted-foreground hidden md:table-cell">{tool.model}</td>
+                        <td className="px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-sm text-muted-foreground hidden lg:table-cell">
+                          {tool.name === 'ChatGPT' ? 'OpenAI' : 
+                           tool.name === 'Claude' ? 'Anthropic' : 
+                           tool.name === 'AI Studio' ? 'Google' : 
+                           tool.name === 'Grok' ? 'X ( Antigo Twitter )' : 
+                           tool.name === 'DeepSeek' ? 'DeepSeek AI' : ''}
                         </td>
                       </tr>
                     ))}
